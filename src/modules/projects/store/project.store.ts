@@ -41,7 +41,7 @@ export const useProjectStore = defineStore('projects', () => {
     project.tasks.push({
       id: uuidv4(),
       name: taskName,
-      completedAt: null,
+      completedAt: undefined,
     });
   }
 
@@ -70,7 +70,9 @@ export const useProjectStore = defineStore('projects', () => {
         const completion = total === 0 ? 0 : (completed / total) * 100;
 
         return {
-          ...project,
+          id: project.id,
+          name: project.name,
+          taskCount: total,
           completion: Math.round(completion),
         }
       })
