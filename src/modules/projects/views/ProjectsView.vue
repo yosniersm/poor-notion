@@ -18,7 +18,7 @@
         >
           <th>{{ index + 1 }}</th>
           <td>{{ project.name }}</td>
-          <td>{{ project.tasks.length }}</td>
+          <td>{{ project.taskCount }}</td>
           <td>
             <progress
               class="progress progress-primary w-56"
